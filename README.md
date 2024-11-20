@@ -1,7 +1,7 @@
 # JV-Progress
-Jano: C++
+Jano: C++ 
+---
 Valentín: Python
-
 ---
 
 Nivel 1: Fundamentos
