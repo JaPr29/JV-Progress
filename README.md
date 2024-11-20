@@ -172,4 +172,3 @@ Escribí un programa que simule lanzar dos dados y muestre los resultados. Permi
 
 ---
 
-Si resolvés todos estos ejercicios, tendrás un dominio sólido de Python y sus características principales. ¿Querés que arranquemos con alguno en particular? Si te trabás, ¡te ayudo!
