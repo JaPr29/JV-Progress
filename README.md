@@ -1,5 +1,5 @@
 # JV-Progress
-Jano: C++ 
+Jano: JavaScript 
 ---
 Valentín: Python
 ---
