@@ -2,11 +2,36 @@
 <html lang="es">
 <head>
     <head><meta charset="UTF-8"></head>
-    <script src="Ejercicios.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="Ejercicios.js">
+        function Ejercicios(number) {
+            document.getElementById("CodeButton").addEventListener("click", Ejercicios(number)); 
+        }
+        
+
+    </script>
     <title>Ejercicios</title>
 </head>
-<body style="background-color: black;">
-    
-    
+<body>
+    <div id="buttonline">
+        <ul>
+            <li>
+                <button  id="CodeButton" onclick="Ejercicios(1)">EJERCICIO 1</button>
+            </li>
+            <li>
+                <button  id="CodeButton" onclick="Ejercicios(2)">EJERCICIO 2</button>
+            </li>
+            <li>
+                <button  id="CodeButton" onclick="Ejercicios(3)">EJERCICIO 3</button>
+            </li>
+            <li>
+                <button  id="CodeButton" onclick="Ejercicios(4)">EJERCICIO 4</button>
+            </li>
+            <li>
+                <button  id="CodeButton" onclick="Ejercicios(5)">EJERCICIO 5</button>
+            </li>
+        </ul>
+    </div>
 </body>
 </html>
+<!-- <button  id="CodeButton" onclick="Ejercicios()">EJERCICIO </button> -->
