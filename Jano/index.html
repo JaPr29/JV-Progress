@@ -1,37 +1,96 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-    <head><meta charset="UTF-8"></head>
-    <link rel="stylesheet" href="style.css">
-    <script src="Ejercicios.js">
-        function Ejercicios(number) {
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios</title>
+    <script src="Ejercicios.js"></script>
+    <link rel="stylesheet" href="style.css"> <!-- Link to the CSS file -->
+</head>
+<body class="index-page">
+    <div class="slideshow-container">
+        <div class="info-button">
+            <a href="info.html">?</a>
+        </div>
+        <div class="slide" id="slide">
+            <h2>Nivel 1</h2>
+            <div class="button-row">
+                <button id="CodeButton" onclick="Challenges(1)">Ejercicio 1</button>
+                <button id="CodeButton" onclick="Challenges(2)">Ejercicio 2</button>
+                <button id="CodeButton" onclick="Challenges(3)">Ejercicio 3</button>
+                <button id="CodeButton" onclick="Challenges(4)">Ejercicio 4</button>
+            </div>
+        </div>
+        <div class="slide" id="slide">
+            <h2>Nivel 2</h2>
+            <div class="button-row">
+                <button id="CodeButton" onclick="Challenges(5)">Ejercicio 1</button>
+                <button id="CodeButton" onclick="Challenges(6)">Ejercicio 2</button>
+                <button id="CodeButton" onclick="Challenges(7)">Ejercicio 3</button>
+                <button id="CodeButton" onclick="Challenges(8)">Ejercicio 4</button>
+            </div>
+        </div>
+        <div class="slide" id="slide">
+            <h2>Nivel 3</h2>
+            <div class="button-row">
+                <button id="CodeButton" onclick="Challenges(9)">Ejercicio 1</button>
+                <button id="CodeButton" onclick="Challenges(10)">Ejercicio 2</button>
+                <button id="CodeButton" onclick="Challenges(11)">Ejercicio 3</button>
+                <button id="CodeButton" onclick="Challenges(12)">Ejercicio 4</button>
+            </div>
+        </div>
+        <div class="slide" id="slide">
+            <h2>Nivel 4</h2>
+            <div class="button-row">
+                <button id="CodeButton" onclick="Challenges(13)">Ejercicio 1</button>
+                <button id="CodeButton" onclick="Challenges(14)">Ejercicio 2</button>
+                <button id="CodeButton" onclick="Challenges(15)">Ejercicio 3</button>
+                <button id="CodeButton" onclick="Challenges(16)">Ejercicio 4</button>
+            </div>
+        </div>
+        <div class="slide" id="slide">
+            <h2>Nivel 5</h2>
+            <div class="button-row">
+                <button id="CodeButton" onclick="Challenges(17)">Ejercicio 1</button>
+                <button id="CodeButton" onclick="Challenges(18)">Ejercicio 2</button>
+            </div>
+        </div>
+        <div class="slide" id="slide">
+            <h2>Nivel 6</h2>
+            <div class="button-row">
+                <button id="CodeButton" onclick="Challenges(19)">Ejercicio 1</button>
+                <button id="CodeButton" onclick="Challenges(20)">Ejercicio 2</button>
+                <button id="CodeButton" onclick="Challenges(21)">Ejercicio 3</button>
+                <button id="CodeButton" onclick="Challenges(22)">Ejercicio 4</button>
+            </div>
+        </div>
+        <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+        <button class="next" onclick="changeSlide(1)">&#10095;</button>
+    </div>
+        
+    
+
+    <script>
+        var currentSlide = 1;
+        showSlide(currentSlide);
+
+        function changeSlide(n) {
+            showSlide(currentSlide += n);
+        }
+
+        function showSlide(n) {
+            var slides = document.getElementsByClassName("slide");
+            if (n > slides.length) { currentSlide = 1 }
+            if (n < 1) { currentSlide = slides.length }
+            for (var i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[currentSlide - 1].style.display = "block";
+        }
+        function Challenges(number) {
             document.getElementById("CodeButton").addEventListener("click", Ejercicios(number)); 
         }
-        
 
     </script>
-    <title>Ejercicios</title>
-</head>
-<body>
-    <div id="buttonline">
-        <ul>
-            <li>
-                <button  id="CodeButton" onclick="Ejercicios(1)">EJERCICIO 1</button>
-            </li>
-            <li>
-                <button  id="CodeButton" onclick="Ejercicios(2)">EJERCICIO 2</button>
-            </li>
-            <li>
-                <button  id="CodeButton" onclick="Ejercicios(3)">EJERCICIO 3</button>
-            </li>
-            <li>
-                <button  id="CodeButton" onclick="Ejercicios(4)">EJERCICIO 4</button>
-            </li>
-            <li>
-                <button  id="CodeButton" onclick="Ejercicios(5)">EJERCICIO 5</button>
-            </li>
-        </ul>
-    </div>
 </body>
 </html>
-<!-- <button  id="CodeButton" onclick="Ejercicios()">EJERCICIO </button> -->

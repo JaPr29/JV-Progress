@@ -1,15 +1,143 @@
-#CodeButton {
-    height: 2rem; 
-    width: 15rem; 
-    font-size: 1.5rem;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+/* General styles for the body */
+.index-page {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #121212;
+    color: #e0e0e0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
-body {
-    background-color: black;
+/* Container for the slideshow */
+.slideshow-container {
+    width: 90%;
+    max-width: 800px;
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     text-align: center;
+    margin-bottom: 20px;
+    position: relative;
 }
 
-#ShowLevel {
-    background-color: white;
-  }
+/* Info button */
+.info-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.info-button a {
+    background-color: #333333;
+    color: #e0e0e0;
+    padding: 4px 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.info-button a:hover {
+    background-color: #555555;
+}
+
+/* Styles for the slides */
+.slide {
+    display: none;
+    font-size: 24px;
+    padding: 20px;
+}
+
+/* Container for the buttons in a row */
+.button-row {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+/* Styles for the navigation buttons */
+button {
+    background-color: #333333; /* Dark background */
+    border: none;
+    color: #e0e0e0; /* Light text */
+    padding: 15px 32px; /* Padding */
+    text-align: center; /* Centered text */
+    text-decoration: none; /* No underline */
+    display: inline-block; /* Inline-block display */
+    font-size: 16px; /* Font size */
+    margin: 10px 5px; /* Margin */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 8px; /* Rounded corners */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+/* Hover effect for buttons */
+button:hover {
+    background-color: #555555; /* Lighter dark on hover */
+}
+
+/* Active effect for buttons */
+button:active {
+    background-color: #777777; /* Even lighter dark when clicked */
+}
+
+/* Styles for the previous and next buttons */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    padding: 10px;
+    cursor: pointer;
+    background-color: #333333; /* Dark background */
+    color: #e0e0e0; /* Light text */
+    border: none;
+    border-radius: 50%;
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+/* Hover effect for navigation buttons */
+.prev:hover, .next:hover {
+    background-color: #555555; /* Lighter dark on hover */
+}
+
+/* Info page styles */
+.info-container {
+    width: 90%;
+    max-width: 800px;
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    text-align: left;
+    margin-bottom: 50px;
+    margin-top: 100px;
+}
+
+.level-info {
+    margin-bottom: 20px;
+}
+
+.info-page {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #121212;
+    color: #e0e0e0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
