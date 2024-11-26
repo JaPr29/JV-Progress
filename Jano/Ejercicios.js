@@ -89,10 +89,163 @@ function Ejercicios(exnumber) {
 
         case (5): {
             
+            let operation = prompt("¿Qué operación desea realizar? (S)uma, (R)esta, (M)ultiplicación, (D)ivisión. Ingrese solo la primera letra").toLowerCase()
+            let number1 = Number(prompt("Ingrese el primer número: "))
+            let number2 = Number(prompt("Ingrese el segundo número: "))
+            if (operation.length > 1 || operation.length < 1) {
+                alert("La operación ingresada no existe o no está disponible.")
+            }
+            else {
+                switch (operation) {
+                    case ("s"): {
+                        alert("El resultado de la operación ingresada es " + (number1 + number2))
+                        break
+                    }
+                    
+                    case ("r"): {
+                        alert("El resultado de la operación ingresada es " + (number1 - number2))
+                        break
+                    }
+
+                    case ("m"): {
+                        alert("El resultado de la operación ingresada es " + (number1 * number2))
+                        break
+                    }
+
+                    case ("d"): {
+                        alert("El resultado de la operación ingresada es " + (number1 / number2))
+                        break
+                    }
+
+                }
+            }
+
+
+        }
+
+        case (6): {
+
+            alert("¡Juego de Adivinanza!")
+            let randomNumber = Math.floor(Math.random() * 10) + 1
+            while (true) {
+                selectednumber = prompt("¡Elige un número del 1 al 10!")
+                if (randomNumber == selectednumber) {
+                    alert("¡GANASTE!")
+                    break
+                }
+                else {
+                    if (selectednumber < randomNumber) {
+                        alert("Fallaste, pero no te desanimes, el número es más grande que el último que elegiste, ¡inténtalo de nuevo!")
+                    }
+                    else if (selectednumber > randomNumber) {
+                        alert("Fallaste, pero no te desanimes, el número es más chico que el último que elegiste, ¡inténtalo de nuevo!")
+                    }
+                }
+            }
+        }
+
+        case (7): {
+
+            let number = parseInt(prompt("Escribe el número para dar la tabla de multiplicaciones."))
+            alert(number * 1 + "\n" + number * 2 + "\n" + number * 3 + "\n" + number * 4 + "\n" + number * 5 + "\n" + number * 6 + "\n" + number * 7 + "\n" + number * 8 + "\n" + number * 9 + "\n" + number * 10)
+            break
+        }
+
+        case (8): {
+
+            let number1 = parseInt(prompt("Ingresa el primer número: "))
+            let number2 = parseInt(prompt("Ingresa el segundo número: "))
+            let number3 = parseInt(prompt("Ingresa el tercer número: "))
+
+            if (number1 > number2 && number1 > number3) {
+                alert("El primer número (" + number1 + ") es el mayor.")
+            }
+            else if (number2 > number1 && number2 > number3) {
+                alert("El segundo número (" + number2 + ") es el mayor.")
+            }
+            else if (number3 > number1 && number3 > number2) {
+                alert("El tercer número (" + number3 + ") es el mayor.")
+            }
+            else {
+                alert("Los tres números son iguales.")
+            }
+
+        }
+
+        case (9): {
+
+            alert("Lista de compras.")
+            let product
+            let shoplist = []
+            let endlist = false
+            while (!(endlist)) {
+                product = prompt("Ingresa el nombre del producto a agregar a la lista.")
+                if (product.length <= 0) {
+                    alert("No escribiste nada mamerto...")
+                }
+                else {
+                    shoplist.push(product)
+                    let decision = true
+                    while (decision) {
+                    buydecision = (prompt("¿Quieres seguir comprando? S/N")).toLowerCase()
+                    if (buydecision == "s") {
+                        decision = false
+                    }
+                    else if (buydecision == "n") {
+                        decision = false
+                        endlist = true
+                    }
+                    else {
+                        alert("La opción elegida no está disponible.")
+                    }
+                }
+            }
+            }
+                function ShowList() {
+                    alert("A continuación se mostrará la lista:")
+                    shoplist.forEach(element => {
+                        alert(element)
+                });
+                }
+
+                function DeleteProduct() {
+                    let deleteproduct = (prompt("¿Quieres eliminar algún producto? S/N")).toLowerCase()
+                    if (deleteproduct == "s") {
+                        let productiddelete = prompt("¿Qué producto quieres eliminar? Pon el nombre exacto que pusiste anteriormente.")
+                        if (shoplist.includes(productiddelete)) {
+                            shoplist = shoplist.filter(id => id !== productiddelete);
+                        }
+                        else {
+                            alert("No existe ese producto en la lista.")
+                        }
+                        deleteproduct = prompt("¿Quieres eliminar otro producto? S/N").toLowerCase()
+                        if (deleteproduct == "s") {
+                            DeleteProduct()
+                        }
+                        else if (deleteproduct == "n") {
+                            ShowList()
+                            alert("Adiós!")
+                        }
+                        else {
+                            alert("La opción elegida no está disponible.")
+                        }
+                    }
+
+                    else if (deleteproduct == "n") {
+                        alert("Adiós.")
+                    }
+                    else {
+                        alert("La opción elegida no está disponible.")
+                    }
+                    }
+                ShowList()
+
+                DeleteProduct()
+
+        }
+
+        case (10): {
             
-
-
-
         }
     }
 }
