@@ -3,8 +3,17 @@
 #Permití que elimine algún elemento.
 
 lista = ["manzana", "pan", "atun", "sopa"]
+#Me di cuenta que podia dar muchos errores y el usuario podia ingresar cualquier cosa.
+def validar_entrada():
+    while True:
+        agregar = input("Agrega un elemento a la lista del supermercado: \n").strip()
+        if len(agregar) >= 3 and agregar.isalpha():
+            return agregar
+        else:
+            print("La entrada no puede estar vacía y debe tener 3 letras. Intente de nuevo.")
 
-lista.append(input("Agrega un elemento a la lista del supermercado: \n"))
+nuevo_elemento = validar_entrada()
+lista.append(nuevo_elemento)
 
 print(f"\nlista del supermercado actual:")
 for i in lista:
