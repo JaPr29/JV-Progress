@@ -4,6 +4,7 @@
 function Ejercicios(exnumber) {
 
     switch (exnumber) {
+        ////////////////////////////////////////// EJERCICIO ///////////////////////////////////////////////
         case (1): {
             /*1. Cálculo básico:
             // Escribí un programa que tome dos números ingresados por el usuario y devuelva su suma, resta, multiplicación y división.*/
@@ -23,7 +24,7 @@ function Ejercicios(exnumber) {
             break
 
         }
-
+        ////////////////////////////////////////// EJERCICIO ///////////////////////////////////////////////
         case (2): {
             // 2. Número par o impar:
             // Escribí un programa que determine si un número ingresado por el usuario es par o impar.
@@ -39,7 +40,7 @@ function Ejercicios(exnumber) {
             break
 
         }
-
+        ////////////////////////////////////////// EJERCICIO ///////////////////////////////////////////////
         case (3): {
             // 3. Conversión de temperatura:
 
@@ -69,7 +70,7 @@ function Ejercicios(exnumber) {
 
 
         }
-        
+        ////////////////////////////////////////// EJERCICIO ///////////////////////////////////////////////
         case (4): {
             // 4. Contar caracteres:
 
@@ -86,7 +87,7 @@ function Ejercicios(exnumber) {
 
             break
         }
-
+        ////////////////////////////////////////// EJERCICIO ///////////////////////////////////////////////
         case (5): {
             
             let operation = prompt("¿Qué operación desea realizar? (S)uma, (R)esta, (M)ultiplicación, (D)ivisión. Ingrese solo la primera letra").toLowerCase()
@@ -122,7 +123,7 @@ function Ejercicios(exnumber) {
 
 
         }
-
+        ////////////////////////////////////////// EJERCICIO ///////////////////////////////////////////////
         case (6): {
 
             alert("¡Juego de Adivinanza!")
@@ -143,14 +144,14 @@ function Ejercicios(exnumber) {
                 }
             }
         }
-
+        ////////////////////////////////////////// EJERCICIO ///////////////////////////////////////////////
         case (7): {
 
             let number = parseInt(prompt("Escribe el número para dar la tabla de multiplicaciones."))
             alert(number * 1 + "\n" + number * 2 + "\n" + number * 3 + "\n" + number * 4 + "\n" + number * 5 + "\n" + number * 6 + "\n" + number * 7 + "\n" + number * 8 + "\n" + number * 9 + "\n" + number * 10)
             break
         }
-
+        ////////////////////////////////////////// EJERCICIO ///////////////////////////////////////////////
         case (8): {
 
             let number1 = parseInt(prompt("Ingresa el primer número: "))
@@ -171,7 +172,7 @@ function Ejercicios(exnumber) {
             }
 
         }
-
+        ////////////////////////////////////////// EJERCICIO ///////////////////////////////////////////////
         case (9): {
 
             alert("Lista de compras.")
@@ -243,10 +244,11 @@ function Ejercicios(exnumber) {
                 DeleteProduct()
 
         }
-
+        ////////////////////////////////////////// EJERCICIO ///////////////////////////////////////////////
         case (10): {
-            
+
         }
+        ////////////////////////////////////////// EJERCICIO ///////////////////////////////////////////////
     }
 }
 
