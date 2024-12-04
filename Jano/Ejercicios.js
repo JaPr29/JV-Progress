@@ -236,8 +236,97 @@ function Ejercicios(exnumber) {
         }
         ////////////////////////////////////////// EJERCICIO ///////////////////////////////////////////////
         case (10): {
+            let gradequant = parseInt(prompt("¿Cuántas calificaciones hay para el promedio?"))
+            let gradeinputtimes = 0
+            let gradeaverage = 0
+            if (typeof(gradequant) !== "number" || isNaN(gradequant) || gradequant < 2) {
+                alert("La cantidad ingresada es invalida, ingrese solo números que sean mayores a 1")
+                break
+            }
+            alert("Ingrese los números correctamente, solo se aceptarán números del 1 al 10 \nSi ingresa algún número o caracter no válido tendrá que empezar otra vez")
+            for (let i = 0; i < gradequant; i++) {
+                let grade = parseInt(prompt("Ingrese la calificación:"))
+                if (typeof(grade) !== "number" || grade > 10 || grade < 1) {
+                    alert("La calificación ingresada no es válida.")
+                    break
+                }
+                gradeinputtimes++ 
+                gradeaverage += grade
+            }
+            if (gradeinputtimes == gradequant) {
+                alert("El promedio de notas es de " + (gradeaverage / gradeinputtimes))
 
+            } break
         }
         ////////////////////////////////////////// EJERCICIO ///////////////////////////////////////////////
-    }
+        case (11): {
+            const palindrome = (prompt("Ingresa una palabra o frase:")).replace(/\s+/g, "")
+            let wordlist = []
+            for (i = 0; i < palindrome.length; i++){
+                wordlist.push(palindrome.at(i))
+            }
+            let wordlistreverse = []
+            for (let i = wordlist.length - 1; i != -1; i--) {
+                wordletter = wordlist[i]
+                wordlistreverse.push(wordletter)
+            }
+            function IsPalindrome (word, wordreverse) {
+                for (let i = 0; i < word.length; i++) {
+                    if (word[i] != wordreverse[i]) {
+                        return false
+                    }
+                }
+                return true
+            }
+            if (IsPalindrome(wordlist, wordlistreverse)) {
+                alert("La palabra ingresada es un palíndromo")
+            } else {
+                alert("La palabra ingresada no es un palíndromo")
+            } break
+        }
+        ////////////////////////////////////////// EJERCICIO ///////////////////////////////////////////////
+        case (12) : {
+            const phrase = prompt("Ingrese una frase: ");
+            const words = phrase.toLowerCase().split(/\s+/);
+            const wordFreq = {};  
+            words.forEach(word => {
+              word = word.replace(/[.,!?"']/g, '');
+              if (word in wordFreq) {
+                wordFreq[word]++;
+              } else {
+                wordFreq[word] = 1;
+              }
+            });
+              
+            for (const word in wordFreq) {
+              alert('La palabra "' + word + '" aparece ' + wordFreq[word] + ' veces en la frase.');
+            }
+            break
+        }
+        ////////////////////////////////////////// EJERCICIO ///////////////////////////////////////////////
+        case (13) : {
+            //La verdad es que la consigna es malísima así que prefiero hacer una calculadora que pueda hacer múltiples cosas de una, sin funciones ni mierdas de esas.
+            const operation = prompt("Escriba la operación que desea realizar a continuación, con números y signos (Ejemplo: 2 + 2)")
+            alert("El resultado de la operación es: " + eval(operation))
+            break
+        }
+        ////////////////////////////////////////// EJERCICIO ///////////////////////////////////////////////
+        case (14) : {
+            function IsPrime (num) {
+                if (num % 2 == 0) {
+                    alert("El número es primo");
+                }
+                else {
+                    alert("El número no es primo");
+                }
+                return ;
+            }
+            const number = prompt("Ingrese un número:")
+            IsPrime(number)
+        }
+        ////////////////////////////////////////// EJERCICIO ///////////////////////////////////////////////
+        case (15) : {
+            
+        }
+    }   
 }
