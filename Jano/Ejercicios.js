@@ -351,5 +351,48 @@ function Ejercicios(exnumber) {
             break
             
         }
+        ////////////////////////////////////////// EJERCICIO ///////////////////////////////////////////////
+        case (16) : {
+            function Factorial (number, lastfactorial = 1) {
+                if (number < 1) {
+                    alert("Imposible calcular el factorial.");
+                    return
+                }
+                if (number != 1) {
+                    lastfactorial *= (number);
+                    number -= 1;
+                    Factorial(number, lastfactorial);
+                }
+                else {
+                    alert("El factorial del número ingresado es: " + lastfactorial);
+                }
+                
+            }
+            const num = parseInt(prompt("Ingrese un número para calcular el factorial:"));
+            Factorial(num);
+        }
+        ///////////////////////////////////////// EJERCICIO ///////////////////////////////////////////////
+        case (17) : {
+            //Solo funciona si se ejecuta en NodeJS
+            alert("AVISO, ESTE EJERCICIO SOLO FUNCIONA EN NODEJS");
+            const gradeavg = prompt("Ingrese la nota promedio de los exámenes: ");
+            const fs = require('fs');
+            fs.writeFile('grades.txt', `Average grade: ${gradeavg}`, (err) => {
+                if (err) {
+                  console.error(err);
+                  alert("Ha habido un error, intentelo denuevo");
+                } else {
+                  console.log('Average saved to grades.txt');
+                  alert("La nota promedio se ha guardado en el archivo correctamente!");
+                }
+              });
+        }
+        case (18) : {
+            alert("Ejercicio salteado por pertenecer a NodeJS, se creará otra página en la que funcione...");
+        }
+        ///////////////////////////////////////// EJERCICIO ///////////////////////////////////////////////
+        case (19) : {
+             
+        }
     }   
 }
