@@ -1,6 +1,3 @@
-
-
-
 function Ejercicios(exnumber) {
 
     switch (exnumber) {
@@ -388,6 +385,7 @@ function Ejercicios(exnumber) {
                 }
               }); break
         }
+        ////////////////////////////////////////// EJERCICIO ///////////////////////////////////////////////
         case (18) : {
             alert("Ejercicio salteado por pertenecer a NodeJS, se creará otra página en la que funcione...");
             break
@@ -492,7 +490,7 @@ function Ejercicios(exnumber) {
                 }
             }
         }
-
+        ////////////////////////////////////////// EJERCICIO ///////////////////////////////////////////////
         case (20) : {
             // Como JS no puede generar archivos, solo funciona en NodeJS, pero lo voy a hacer en modo local
             class Contact {
@@ -559,7 +557,7 @@ function Ejercicios(exnumber) {
                 
             }
         }
-
+        ////////////////////////////////////////// EJERCICIO ///////////////////////////////////////////////
         case (21) : {
             function HangmanWordGen() {
                 const words = ["JAVASCRIPT", "HTML", "CSS", "PYTHON", "NODEJS"];
@@ -602,7 +600,7 @@ function Ejercicios(exnumber) {
             alert("Has perdido.");
             return
         }
-
+        ////////////////////////////////////////// EJERCICIO ///////////////////////////////////////////////
         case 22 : {
             function DiceThrow () {
                 return Math.floor(Math.random() * 6) + 1;
