@@ -392,7 +392,170 @@ function Ejercicios(exnumber) {
         }
         ///////////////////////////////////////// EJERCICIO ///////////////////////////////////////////////
         case (19) : {
-             
+            function CheckPassword (password, type) {
+                switch (type) {
+                    case ("Hard") : {
+                        var hasnumber = false
+                        var hasletters = false
+                        var hassings = false
+                        for (i = 0; i < password.length; i++) {
+                            if (password.charAt(i).match(/[a-zA-Z]/)) {
+                                hasnumber = true
+                            } else if (password.charAt(i).match(/[0-9]/))  {
+                                hasletters = true
+                            } else if (password.charAt(i).match(/[!@#$%^&*()]/)) {
+                                hassings = true
+                            }
+                        }
+                        if (hasnumber == true && hasletters == true && hassings == true) {
+                            return true
+                        } else {
+                            return false
+                        }
+                    }
+                    case ("Mid") : {
+                        var hasnumber = false
+                        var hasletters = false
+                        for (i = 0; i < password.length; i++) {
+                            if (password.charAt(i).match(/[a-zA-Z]/)) {
+                                hasnumber = true
+                            } else if (password.charAt(i).match(/[0-9]/))  {
+                                hasletters = true
+                            }
+                        }
+                        if (hasnumber == true && hasletters == true) {
+                            return true
+                        } else {
+                            return false
+                        }
+                    }
+                }   
+            }
+            function GenerateHardPass (passwordlenght) {
+                const charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()";
+                var password = "";
+                for (i = 0; i < passwordlenght; i++) {
+                    var charselector = Math.floor(Math.random() * charset.length);
+                    password += charset.charAt(charselector);
+                }
+                if (CheckPassword(password, "Hard") == false) {
+                    GenerateHardPass(passwordlenght);
+                }
+                return password;
+            }
+            function GenerateMidPass (passwordlenght) {
+                const charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+                var password = "";
+                for (i = 0; i < passwordlenght; i++) {
+                    var charselector = Math.floor(Math.random() * charset.length);
+                    password += charset.charAt(charselector);
+                }
+                if (CheckPassword(password, "Mid") == false) {
+                    GenerateMidPass(passwordlenght);
+                }
+                return password;
+            }
+            function GenerateEasyPass (passwordlenght) {
+                const charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+                var password = "";
+                for (i = 0; i < passwordlenght; i++) {
+                    var charselector = Math.floor(Math.random() * charset.length);
+                    password += charset.charAt(charselector);
+                }
+                return password;
+            }
+            alert('¿Qué tan complicada quiere su contraseña? \nElija con los números "1 / 2 / 3" la dificultad de su contraseña.');
+            const charsetdif = prompt("1. Dificultad Baja: Solo letras.\n2. Dificultad Media: Letras y números.\n3. Dificultad Alta: Letras, números y símbolos");
+            const passwordlenght = parseInt(prompt("Ingrese en números la longitud de la contraseña:"));
+            if (passwordlenght < 1) {
+                charsetdif = NaN
+            }
+
+            switch (charsetdif) {
+                case ("1") : {
+                    alert("Tu contraseña es: " + GenerateEasyPass(passwordlenght));
+                    break
+                }
+                case ("2") : {
+                    alert("Tu contraseña es: " + GenerateMidPass(passwordlenght));
+                    break
+                }
+                case ("3") : {
+                    alert("Tu contraseña es: " + GenerateHardPass(passwordlenght));
+                    break
+                }
+                default : {
+                    alert("Los parámetros ingresados no son válidos.")
+                    break
+                }
+            }
+        }
+
+        case (20) : {
+            // Como JS no puede generar archivos, solo funciona en NodeJS, pero lo voy a hacer en modo local
+            class Contact {
+                constructor (name, number) {
+                    this.name = name;
+                    this.number = number;
+                }
+                toString () {
+                    return ("Nombre: " + this.name + " \t Teléfono: " + this.number);
+                }
+            }
+            function SaveContact (contactlist) {
+                let name = prompt("Ingrese el nombre del contacto: ");
+                let number = prompt("Ingrese el teléfono del contacto: ");
+                let contact = new Contact(name, number);
+                contactlist.push(contact);
+                alert("Contacto guardado");
+            }
+            function ShowContact (contactlist) {
+                let contactstring = "";
+                for (let i = 0; i < contactlist.length; i++) {
+                    contactstring += (contactlist[i].toString() + "\n");
+                }
+                alert (contactstring);
+            }
+            function DeleteContact (contactlist) {
+                let name = prompt("Ingrese el nombre del contacto que quiere eliminar: ");
+                for (let i = 0; i < contactlist.length; i++) {
+                    if (contactlist[i].name == name) {
+                        contactlist.splice(i, 1);
+                        alert("Contacto eliminado.");
+                        return
+                    }
+                }
+                alert("No existe ese contacto en la lista.");
+                }
+                
+
+            let contactlist = [];
+            while (true) {
+                let option = (prompt("Bienvenido a la agenda ¿Quién quieres hacer? \n1. Guardar contacto \n2. Mostrar contactos \n3. Eliminar contacto\n4. Salir"))
+                switch (option) {
+                    case ("1") : {
+                        SaveContact(contactlist);
+                        break
+                    }
+                    case ("2") : {
+                        ShowContact(contactlist);
+                        break
+                    }
+                    case ("3") : {
+                        DeleteContact(contactlist);
+                        break
+                    }
+                    case ("4") : {
+                        alert("Hasta pronto");
+                        return
+                    }
+                    default : {
+                        alert("La opción elegida no es válida.");
+                        break
+                    }
+                }
+                
+            }
         }
     }   
 }
