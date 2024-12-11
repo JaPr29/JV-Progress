@@ -61,7 +61,7 @@ function Ejercicios(exnumber) {
                         break
                     }
                 }
-            }    
+            } break  
         }
         ////////////////////////////////////////// EJERCICIO ///////////////////////////////////////////////
         case (4): {
@@ -80,11 +80,11 @@ function Ejercicios(exnumber) {
         }
         ////////////////////////////////////////// EJERCICIO ///////////////////////////////////////////////
         case (5): {
-            let operation = prompt("¿Qué operación desea realizar? (S)uma, (R)esta, (M)ultiplicación, (D)ivisión. Ingrese solo la primera letra").toLowerCase()
+            let operation = (prompt("¿Qué operación desea realizar? (S)uma, (R)esta, (M)ultiplicación, (D)ivisión. Ingrese solo la primera letra")).toLowerCase()
             let number1 = Number(prompt("Ingrese el primer número: "))
             let number2 = Number(prompt("Ingrese el segundo número: "))
             // CORRECCIÓN DE ERRORES:
-            if (operation != "s" || operation != "r" || operation != "m" || operation != "d") {
+            if (operation != "s" && operation != "r" && operation != "m" && operation != "d") {
                 alert("La operación ingresada no existe o no está disponible.")
             }
             else if (typeof number1 !== "number" || typeof number2 !== "number") {
@@ -133,7 +133,7 @@ function Ejercicios(exnumber) {
                         alert("Fallaste, pero no te desanimes, el número es más chico que el último que elegiste, ¡inténtalo de nuevo!")
                     }
                 }
-            }
+            } break
         }
         ////////////////////////////////////////// EJERCICIO ///////////////////////////////////////////////
         case (7): {
@@ -164,7 +164,7 @@ function Ejercicios(exnumber) {
             }
             else {
                 alert("Los tres números son iguales.")
-            }
+            } break
         }
         ////////////////////////////////////////// EJERCICIO ///////////////////////////////////////////////
         case (9): {
@@ -232,7 +232,7 @@ function Ejercicios(exnumber) {
                     }
                 ShowList()
                 DeleteProduct()
-
+            break
         }
         ////////////////////////////////////////// EJERCICIO ///////////////////////////////////////////////
         case (10): {
@@ -328,7 +328,7 @@ function Ejercicios(exnumber) {
         case (15) : {
             let numbers = [];
             while (true) {
-                const number = prompt("Ingrese un número:");
+                const number = prompt("Ingrese un número, toque enter sin ingresar nada para salir:");
                 if (number == "") {
                     break
                 }
@@ -370,6 +370,7 @@ function Ejercicios(exnumber) {
             }
             const num = parseInt(prompt("Ingrese un número para calcular el factorial:"));
             Factorial(num);
+            break
         }
         ///////////////////////////////////////// EJERCICIO ///////////////////////////////////////////////
         case (17) : {
@@ -385,10 +386,11 @@ function Ejercicios(exnumber) {
                   console.log('Average saved to grades.txt');
                   alert("La nota promedio se ha guardado en el archivo correctamente!");
                 }
-              });
+              }); break
         }
         case (18) : {
             alert("Ejercicio salteado por pertenecer a NodeJS, se creará otra página en la que funcione...");
+            break
         }
         ///////////////////////////////////////// EJERCICIO ///////////////////////////////////////////////
         case (19) : {
@@ -474,19 +476,19 @@ function Ejercicios(exnumber) {
             switch (charsetdif) {
                 case ("1") : {
                     alert("Tu contraseña es: " + GenerateEasyPass(passwordlenght));
-                    break
+                    return
                 }
                 case ("2") : {
                     alert("Tu contraseña es: " + GenerateMidPass(passwordlenght));
-                    break
+                    return
                 }
                 case ("3") : {
                     alert("Tu contraseña es: " + GenerateHardPass(passwordlenght));
-                    break
+                    return
                 }
                 default : {
                     alert("Los parámetros ingresados no son válidos.")
-                    break
+                    return
                 }
             }
         }
@@ -556,6 +558,64 @@ function Ejercicios(exnumber) {
                 }
                 
             }
+        }
+
+        case (21) : {
+            function HangmanWordGen() {
+                const words = ["JAVASCRIPT", "HTML", "CSS", "PYTHON", "NODEJS"];
+                const word = words[Math.floor(Math.random() * words.length)];
+                return word;
+            }
+            function UnguessedWordGen (word) {
+                let unguessedword = "";
+                for (let i = 0; i < word.length; i++) {
+                    unguessedword += "_";
+                }
+                return unguessedword;
+            }
+
+            alert("Bienvenido al Juego Del Ahorcado:\nPara jugar, debes adivinar la palabra oculta. \nTienes 10 intentos, ¡Suerte!");
+            let word = HangmanWordGen();
+            let unguessedword = UnguessedWordGen(word);
+            for (let i = 0; i < 10; i++) {
+                if (unguessedword == word) {
+                    alert("¡Has ganado!");
+                    return
+                }
+                let guess = (prompt("Ingresa una letra: ")).toUpperCase();
+                if (guess.length != 1) {
+                    alert("Por favor, ingresa una letra.");
+                    i--;
+                    continue;
+                }
+                if (word.includes(guess)) {
+                    alert("Correcto!");
+                    let position = word.indexOf(guess);
+                    unguessedword = unguessedword.substring(0, position) + guess + unguessedword.substring(position + 1);
+                    alert("Progreso: " + unguessedword);
+                    i--;
+                }
+                else {
+                    alert("Incorrecto!");
+                }                
+            }
+            alert("Has perdido.");
+            return
+        }
+
+        case 22 : {
+            function DiceThrow () {
+                return Math.floor(Math.random() * 6) + 1;
+            }
+            alert("Simulación de dados, ingresa cuantas veces quieres tirar los dados.");
+            let throws = parseInt(prompt("Ingrese el número de tiradas: "));
+            for (let i = 0; i < throws; i++) {
+                let dice1 = DiceThrow();
+                let dice2 = DiceThrow();
+                alert("Resultados de la tirada " + (i + 1) + "\nDado 1: " + dice1 + "\nDado 2: " + dice2);
+            }
+            return
+            
         }
     }   
 }
